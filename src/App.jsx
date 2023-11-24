@@ -1,5 +1,6 @@
 import { Outlet } from "react-router-dom";
 import Nav from "./Component/Shared/Navbar/Nav";
+import Home from "./Pages/Home/Home";
 import PageTitle from "./PageTitle";
 
 
@@ -8,6 +9,7 @@ const App = () => {
     <div>
     <PageTitle title={'SkillNest | Home'}></PageTitle>
        <Nav></Nav>
+       <Home></Home>
        <Outlet></Outlet>
     </div>
   );

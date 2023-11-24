@@ -6,6 +6,7 @@ import googleGif from '../../assets/google.gif'
 import loginBg from '../../assets/login.png';
 import { AuthContext } from '../../Provider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import '../../App.css';
 const SignIn = () => {
 
     const {user, signUser, signInWithGoogle } = useContext(AuthContext);
@@ -35,6 +36,7 @@ const SignIn = () => {
             '12.8px 56.6px 29.2px rgba(0, 0, 0, 0.048), ' +
             '35px 155px 80px rgba(0, 0, 0, 0.07)',
     };
+  
 
     return (
         <div className='flex justify-between items-center my-24'>
@@ -69,7 +71,7 @@ const SignIn = () => {
                 <Link to='/signup' className="w-1/2 mx-auto text-[#252525]"><p>New user? Sign Up Here.</p></Link>
             </Card>
             <div>
-                <img className='max-w-lg hidden md:block' src={loginBg} />
+                <img className='max-w-lg hidden md:block' id="floating" src={loginBg} />
             </div>
             <Toaster
             position="top-center"

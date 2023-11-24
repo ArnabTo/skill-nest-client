@@ -28,8 +28,8 @@ const Nav = () => {
           }
         >
           <Dropdown.Header>
-            <span className="block text-sm">{user?.displayName}</span>
-            <span className="block truncate text-sm font-medium">{user?.email}</span>
+            <span className="block text-sm pointer-events-none">{user?.displayName}</span>
+            <span className="block truncate text-sm font-medium pointer-events-none">{user?.email}</span>
           </Dropdown.Header>
           <Dropdown.Item>Dashboard</Dropdown.Item>
           <Dropdown.Divider />

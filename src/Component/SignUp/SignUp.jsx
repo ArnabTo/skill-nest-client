@@ -84,7 +84,7 @@ const SignUp = () => {
                 <Link to='/signin' className="w-1/2 mx-auto text-[#252525]"><p>Already a user? Sign In Here.</p></Link>
             </Card>
             <div>
-                <img className='max-w-lg hidden md:block' src={signupBg} />
+                <img className='max-w-lg hidden md:block' id="floating" src={signupBg} />
             </div>
             <Toaster
                 position="top-center"
