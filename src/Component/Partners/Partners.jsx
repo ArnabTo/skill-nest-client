@@ -15,25 +15,25 @@ const Partners = () => {
             <p className='text-center my-4 text-[#242424] font-medium'>Preferred by 20,000 organizations and millions of learners globally, our commitment to excellence resonates worldwide </p>
                 <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4' >
                     <Tilt>
-                        <img className='h-20 my-4 mx-auto' src='https://i.ibb.co/z53F3Xw/ibm.png' />
+                        <img className='h-20 my-5 mx-auto' src='https://i.ibb.co/z53F3Xw/ibm.png' />
                     </Tilt>
                     <Tilt>
-                        <img className='h-20 my-4 mx-auto' src='https://i.ibb.co/PCRYzjc/bag.png' />
+                        <img className='h-20 my-5 mx-auto' src='https://i.ibb.co/PCRYzjc/bag.png' />
                     </Tilt>
                     <Tilt>
-                        <img className='h-20 my-4 mx-auto' src='https://i.ibb.co/98szGf6/air-company-logo.png' />
+                        <img className='h-20 my-5 mx-auto' src='https://i.ibb.co/98szGf6/air-company-logo.png' />
                     </Tilt>
                     <Tilt>
-                        <img className='h-20 my-4 mx-auto' src='https://i.ibb.co/QC9RGVd/game-center.png' />
+                        <img className='h-20 my-5 mx-auto' src='https://i.ibb.co/QC9RGVd/game-center.png' />
                     </Tilt>
                     <Tilt>
-                        <img className='h-20 my-4 mx-auto' src='https://i.ibb.co/VLkcvkM/microsoft.png' />
+                        <img className='h-20 my-5 mx-auto' src='https://i.ibb.co/VLkcvkM/microsoft.png' />
                     </Tilt>
                     <Tilt>
-                        <img className='h-20 my-4 mx-auto' src='https://i.ibb.co/q9Y2pS6/search.png' />
+                        <img className='h-20 my-5 mx-auto' src='https://i.ibb.co/q9Y2pS6/search.png' />
                     </Tilt>
                     <Tilt>
-                        <img className='h-20 my-4 mx-auto' src='https://i.ibb.co/253x5Yk/samsung.png' />
+                        <img className='h-20 my-5 mx-auto' src='https://i.ibb.co/253x5Yk/samsung.png' />
                     </Tilt>
                 </div>
             </div>
