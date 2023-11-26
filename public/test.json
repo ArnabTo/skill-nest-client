@@ -1,0 +1,49 @@
+
+  [
+    {
+      "title": "Introduction to Programming",
+      "name": "Instructor123",
+      "image": "https://i.ibb.co/2nz55WD/pexels-realtoughcandycom-11035380.jpg",
+      "price": 49.99,
+      "short_description": "Learn the basics of programming in this comprehensive introductory course.",
+      "total_enrollment": 120,
+      "rating": 4.5
+    },
+    {
+      "title": "Digital Marketing Fundamentals",
+      "name": "MarketingExpert99",
+      "image": "https://i.ibb.co/8DG6qKv/pexels-realtoughcandycom-11035471.jpg",
+      "price": 29.99,
+      "short_description": "Discover the essentials of digital marketing and boost your online presence.",
+      "total_enrollment": 80,
+      "rating": 4.0
+    },
+    {
+      "title": "Photography Masterclass",
+      "name": "PhotoPro55",
+      "image": "https://i.ibb.co/vzMR8RY/pexels-jeshootscom-714699.jpg",
+      "price": 79.99,
+      "short_description": "Unlock the secrets of stunning photography with this hands-on masterclass.",
+      "total_enrollment": 150,
+      "rating": 4.8
+    },
+    {
+      "title": "Yoga for Beginners",
+      "name": "YogaGuru123",
+      "image": "https://example.com/yoga-for-beginners.jpg",
+      "price": 19.99,
+      "short_description": "Embark on a journey of self-discovery through the practice of yoga, suitable for beginners.",
+      "total_enrollment": 50,
+      "rating": 3.5
+    },
+    {
+      "title": "Artificial Intelligence Essentials",
+      "name": "AI_Wizard",
+      "image": "https://i.ibb.co/XCt1Yv5/pexels-tara-winstead-8386440.jpg",
+      "price": 59.99,
+      "short_description": "Dive into the world of Artificial Intelligence and understand its core principles.",
+      "total_enrollment": 100,
+      "rating": 4.2
+    }
+  ]
+  
