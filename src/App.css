@@ -60,3 +60,11 @@
     object-fit: cover;
   }
   
+  .spinnerCss{
+    display: flex;
+    position: absolute;
+    top: 50%;
+    left: 48%;
+    right: 48%;
+    bottom: 50%;
+  }

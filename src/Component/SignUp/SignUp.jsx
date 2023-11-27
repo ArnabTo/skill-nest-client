@@ -1,6 +1,6 @@
 import { useForm } from "react-hook-form"
 import { Button, Card, Label, TextInput } from 'flowbite-react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleGif from '../../assets/google.gif'
 import signupBg from '../../assets/signup2.png';
 import { useContext } from "react";
@@ -12,7 +12,9 @@ const SignUp = () => {
     const axiosPublic = useAxiosPublic();
     const { user, createUser, updateUser, signInWithGoogle } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors }, } = useForm();
-
+    const location = useLocation();
+    const navigate = useNavigate();
+    const { from } = location.state || { from: { pathname: "/" } }
     const onSubmit = (data) => {
 
         createUser(data.email, data.password)
@@ -28,6 +30,7 @@ const SignUp = () => {
                             .then((res) => {
                                 console.log(res.data)
                                 toast.success('Loged In!');
+                                navigate(from, {replace: true})
                             })
                     })
             }).catch((err) => {
@@ -51,6 +54,7 @@ const SignUp = () => {
                 if (user) {
                     toast.success('Loged In!')
                 }
+                navigate(from, {replace: true})
             })
             .catch(err =>{
                 console.log(err)

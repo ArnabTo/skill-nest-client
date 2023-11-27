@@ -28,7 +28,7 @@ const AuthProvider = ({ children }) => {
             displayName: name, photoURL: photo
         })
     }
-    const logOut=()=>{
+    const logOut = ()=>{
         setLoading(true)
         return signOut(auth)
         .then(()=>{

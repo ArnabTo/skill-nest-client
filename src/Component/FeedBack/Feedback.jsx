@@ -23,7 +23,7 @@ const Feedback = () => {
                 setReviews(res.data)
                 setLoader(false)
             } catch (error) {
-                console.log('Error from feedback', error)
+               return('Error from feedback', error)
             }
         }
         fechFeedBackData();
@@ -103,7 +103,7 @@ const Feedback = () => {
                     >
                         {
                             loader ?
-                                <div className="flex justify-center items-center">
+                                <div className="spinnerCss">
                                     <BeatLoader
                                         color={'#FE325B'}
                                         loading={loader}

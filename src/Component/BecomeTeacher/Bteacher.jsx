@@ -1,4 +1,3 @@
-import { Button } from "flowbite-react";
 import { NavLink } from "react-router-dom";
 
 const Bteacher = () => {

@@ -1,12 +1,13 @@
 import { useContext } from "react";
-import { Navigate } from "react-router-dom";
+import { Navigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../Provider/AuthProvider";
 import BeatLoader from "react-spinners/BeatLoader";
 import { css } from "@emotion/react";
 
-const PrivateRoute = (children) => {
+const PrivateRoute = ({children}) => {
     const { user, loading } = useContext(AuthContext);
-
+    const location = useLocation();
+    console.log(location)
     const override = css`
     display: block;
     margin: 1rem 2rem;
@@ -14,7 +15,7 @@ const PrivateRoute = (children) => {
   `;
 
     if (loading) {
-        return <div className="flex justify-center items-center">
+        return <div className="spinnerCss">
             <BeatLoader
                 color={'#FE325B'}
                 loading={loading}
@@ -24,11 +25,11 @@ const PrivateRoute = (children) => {
                 data-testid="loader"
             /> </div>
     }
-    
-    if (user) {
-        { children }
+
+    if(user) {
+        return children 
     }
-    return <Navigate to='/signin'></Navigate>
+    return <Navigate to='/signin' state={{from : location}} replace></Navigate>
 };
 
 export default PrivateRoute;

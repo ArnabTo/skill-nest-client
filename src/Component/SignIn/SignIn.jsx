@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form"
 import { Button, Card, Label, TextInput } from 'flowbite-react';
 import { useContext } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import googleGif from '../../assets/google.gif'
 import loginBg from '../../assets/login.png';
 import { AuthContext } from '../../Provider/AuthProvider';
@@ -12,12 +12,18 @@ const SignIn = () => {
     const axiosPublic = useAxiosPublic();
     const {user, signUser, signInWithGoogle } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors }, } = useForm();
+    const location = useLocation();
+    const navigate = useNavigate();
+    const { from } = location.state || { from: { pathname: "/" } }
 
     const onSubmit = (data) => {
 
         signUser(data.email, data.password)
         .then(()=>{
-            toast.success('Loged In!')
+            if(user){
+                toast.success('Loged In!')
+                navigate(from, {replace: true})
+            }
         })
     }
     const handleSignWithGoogle=()=>{
@@ -30,12 +36,13 @@ const SignIn = () => {
             }
             axiosPublic.post('/user', userInfo)
                 .then(res => console.log(res.data))
-                .catch(err => console.log(err.message))
+                .catch(err =>  console.log(err.message))
         })
         .then(()=>{
             if(user){
                 toast.success('Loged In')
             }
+            navigate(from, {replace: true})
         })
 
     }

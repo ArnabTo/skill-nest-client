@@ -67,7 +67,7 @@ const FeaturedClass = () => {
       <div ref={sliderRef} className="keen-slider">
         {
           loader ?
-            <div className="flex justify-center items-center">
+            <div className="spinnerCss">
               <BeatLoader
                 color={'#FE325B'}
                 loading={loader}
