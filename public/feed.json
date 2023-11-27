@@ -1,0 +1,33 @@
+[
+    {
+      "feedback": "I really enjoyed the class! The lessons were well-structured, and the instructor was very knowledgeable.",
+      "image": "https://i.ibb.co/85M9yHq/albert-dera-ILip77-Sbm-OE-unsplash.jpg",
+      "name": "Jessica Miller",
+      "title": "Computer Science 101"
+    },
+    {
+      "feedback": "The hands-on projects helped me apply the concepts learned in class. I feel more confident in my programming skills now.",
+      "image": "https://i.ibb.co/xgBsypq/toa-heftiba-O3ymv-T7-Wf9-U-unsplash.jpgg",
+      "name": "Michael Brown",
+      "title": "Advanced Java Programming"
+    },
+    {
+      "feedback": "The class materials were comprehensive, and the online resources provided were very helpful. Highly recommend this course!",
+      "image": "https://i.ibb.co/QP3Tknp/matheus-ferrero-W7b3e-DUb-2-I-unsplash.jpg",
+      "name": "Sophia Anderson",
+      "title": "Data Analysis with Python"
+    },
+    {
+      "feedback": "The instructor's guidance was invaluable. I appreciated the personalized feedback on my projects.",
+      "image": "https://i.ibb.co/SvhgrbQ/Whats-App-Image-2023-11-18-at-21-02-08-0d381fb9.jpg",
+      "name": "Daniel Wilson",
+      "title": "Web Development Masterclass"
+    },
+    {
+      "feedback": "The class discussions were engaging, and the collaborative projects allowed me to connect with fellow students. Great learning experience!",
+      "image": "https://i.ibb.co/QPJgzZd/harps-joseph-t-Avp-DE7f-Xg-Y-unsplash.jpg",
+      "name": "Olivia Robinson",
+      "title": "Mobile App Development"
+    }
+  ]
+  

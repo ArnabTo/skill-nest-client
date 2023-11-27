@@ -9,7 +9,6 @@ const App = () => {
     <div>
     <PageTitle title={'SkillNest | Home'}></PageTitle>
        <Nav></Nav>
-       <Home></Home>
        <Outlet></Outlet>
     </div>
   );

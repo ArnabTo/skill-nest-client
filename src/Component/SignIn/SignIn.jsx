@@ -7,8 +7,9 @@ import loginBg from '../../assets/login.png';
 import { AuthContext } from '../../Provider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
 import '../../App.css';
+import useAxiosPublic from "../../hooks/useAxiosPublic";
 const SignIn = () => {
-
+    const axiosPublic = useAxiosPublic();
     const {user, signUser, signInWithGoogle } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
@@ -21,6 +22,16 @@ const SignIn = () => {
     }
     const handleSignWithGoogle=()=>{
         signInWithGoogle()
+        .then(res => {
+            const userInfo = {
+                email: res.user.email,
+                name: res.user.displayName,
+                image: res.user.photoURL
+            }
+            axiosPublic.post('/user', userInfo)
+                .then(res => console.log(res.data))
+                .catch(err => console.log(err.message))
+        })
         .then(()=>{
             if(user){
                 toast.success('Loged In')

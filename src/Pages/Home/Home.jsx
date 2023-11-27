@@ -1,4 +1,7 @@
+import Bteacher from "../../Component/BecomeTeacher/Bteacher";
+import Count from "../../Component/Count/Count";
 import FeaturedClass from "../../Component/FeaturedClasses/FeaturedClass";
+import Feedback from "../../Component/FeedBack/Feedback";
 import Hero from "../../Component/Hero/Hero";
 import Partners from "../../Component/Partners/Partners";
 
@@ -8,6 +11,9 @@ const Home = () => {
             <Hero />
             <Partners />
             <FeaturedClass></FeaturedClass>
+            <Feedback></Feedback>
+            <Count></Count>
+            <Bteacher></Bteacher>
         </div>
     );
 };

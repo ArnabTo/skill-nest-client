@@ -2,16 +2,15 @@ import FeaturedClasses from "./FeaturedClasses";
 import { Card, Badge } from 'flowbite-react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Pagination } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/pagination';
 import '../../App.css'
+import { useKeenSlider } from "keen-slider/react"
+import "keen-slider/keen-slider.min.css"
+import { useEffect, useState } from "react";
+import BeatLoader from "react-spinners/BeatLoader";
+import { css } from "@emotion/react";
 const FeaturedClass = () => {
-
-  const [featuredClasses] = FeaturedClasses();
-  console.log(featuredClasses)
-
+  const [loader, setLoader] = useState(true);
+  const [featuredClasses ,isPending] = FeaturedClasses();
   const StarDrawing = (
     <path
       d="M398.799,141.794c-43.394-3.977-86.776-6.52-130.158-8.418C258.835,99.302,242.633-4.751,193.173,0.169
@@ -27,44 +26,88 @@ const FeaturedClass = () => {
     activeFillColor: '#fc0939',
     inactiveFillColor: '#ffb6c5',
   };
+  const [sliderRef, slider] = useKeenSlider({
+    breakpoints: {
+      "(min-width: 400px)": {
+        slides: { perView: 2, spacing: 5 },
+      },
+      "(min-width: 1000px)": {
+        slides: { perView: 3, spacing: 10 },
+      },
+    },
+    slides: { perView: 1 },
+    initial: 0, // Set the initial slide index
+  });
+  
+
+  useEffect(() => {
+    if (sliderRef && slider) {
+      sliderRef.current?.refresh();
+      setLoader(false);
+    }
+  }, [sliderRef, slider]);
+
+  const override = css`
+  display: block;
+  margin: 1rem 2rem;
+  border-color: red;
+`;
+
   return (
-    <div>
-       <div>
-         <h1 className="text-3xl text-center font-bold">Our Featured Classes</h1>
-        <p className="text-lg font-medium my-4">Unlock Your Potential: Dive into Top-Rated and In-Demand Classes!</p>
-       </div>
-      <div className='grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4'>
-        {
-          featuredClasses.map(fClass =>
-            <Card
-              className="max-w-sm"
-              imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
-              imgSrc={fClass.image}
-              key={fClass._id}
-
-            >
-              <a href="#">
-                <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
-                  {fClass.title}
-                </h5>
-              </a>
-              <div className="mb-5 mt-2.5 flex items-center">
-                <Rating
-                  style={{ maxWidth: 120 }}
-                  value={Math.floor(fClass.rating)}
-                  itemStyles={customStyles}
-                />
-              </div>
-              <div className="flex items-center justify-between">
-                <span className="text-3xl font-bold text-gray-900 dark:text-white">$599</span>
-                <Badge color="success">Bestseller</Badge>
-              </div>
-            </Card>
-          )
-        }
-
+    <div className="my-12">
+      <div className="text-center m-8">
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+          Our Featured Classes
+        </h2>
+        <p className="mt-4 text-gray-700">
+          Unlock Your Potential: Dive into Top-Rated and In-Demand Classes!
+        </p>
       </div>
 
+      <div ref={sliderRef} className="keen-slider">
+        {
+          loader ?
+            <div className="flex justify-center items-center">
+              <BeatLoader
+                color={'#FE325B'}
+                loading={loader}
+                css={override}
+                size={20}
+                aria-label="Loading Spinner"
+                data-testid="loader"
+              /> </div>
+            :
+            featuredClasses.map(fClass =>
+              <div className="keen-slider__slide number-slide1" key={fClass._id}>
+                <Card
+                  className="max-w-sm "
+                  imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
+                  imgSrc={fClass.image}
+                >
+                  <a href="#">
+                    <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                      {fClass.title}
+                    </h5>
+                    <h5 className="text-sm font-semibold tracking-tight text-[#696969] my-2 dark:text-white">
+                      {fClass.name}
+                    </h5>
+                  </a>
+                  <div className="flex items-center">
+                    <Rating
+                      style={{ maxWidth: 120 }}
+                      value={Math.floor(fClass.rating)}
+                      itemStyles={customStyles}
+                    />
+                  </div>
+                  <div className="flex items-center justify-between">
+                    <span className="text-xl font-bold text-[#696969] dark:text-white">{fClass.price}$</span>
+                    <Badge color="success">Bestseller</Badge>
+                  </div>
+                </Card>
+              </div>
+            )
+        }
+      </div>
     </div>
   );
 };

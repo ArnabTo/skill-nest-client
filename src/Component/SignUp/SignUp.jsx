@@ -6,9 +6,11 @@ import signupBg from '../../assets/signup2.png';
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
+import useAxiosPublic from "../../hooks/useAxiosPublic";
+import axios from "axios";
 const SignUp = () => {
-
-    const {user,  createUser, updateUser, signInWithGoogle } = useContext(AuthContext);
+    const axiosPublic = useAxiosPublic();
+    const { user, createUser, updateUser, signInWithGoogle } = useContext(AuthContext);
     const { register, handleSubmit, formState: { errors }, } = useForm();
 
     const onSubmit = (data) => {
@@ -16,19 +18,43 @@ const SignUp = () => {
         createUser(data.email, data.password)
             .then(() => {
                 updateUser(data.name, data.photo)
-                toast.success('successfuly registered')
-                // console.log(res.user)
-                // console.log(user)
+                    .then(() => {
+                        const userInfo = {
+                            email: data.email,
+                            name: data.name,
+                            image: data.photo
+                        }   
+                        axiosPublic.post('/user', userInfo)
+                            .then((res) => {
+                                console.log(res.data)
+                                toast.success('Loged In!');
+                            })
+                    })
+            }).catch((err) => {
+                console.log(err.message)
             })
     }
 
-    const handleSignWithGoogle=()=>{
+    const handleSignWithGoogle = () => {
         signInWithGoogle()
-        .then(()=>{
-            if(user){
-                toast.success('Loged In!')
-            }
-        })
+            .then(res => {
+                const userInfo = {
+                    email: res.user.email,
+                    name: res.user.displayName,
+                    image: res.user.photoURL
+                }
+                axiosPublic.post('/user', userInfo)
+                    .then(res => console.log(res.data))
+                    .catch(err => console.log(err.message))
+            })
+            .then(() => {
+                if (user) {
+                    toast.success('Loged In!')
+                }
+            })
+            .catch(err =>{
+                console.log(err)
+            })
 
     }
     const customShadow = {
@@ -79,7 +105,7 @@ const SignUp = () => {
                         <TextInput id="password" type="password" {...register('password', { pattern: { message: 'format', value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{6,}$/ } })} required />
                         {errors.password && <p className="text-[red]">Password must be atleast a capital letter, a capital letter & more than 6 character</p>}
                     </div>
-                    <button type="submit" onClick={onSubmit} className='bg-[#FE3258] hover:bg-[#fa0e39] p-3 rounded text-white'>Sign In</button>
+                    <button type="submit" onClick={onSubmit} className='bg-[#FE3258] hover:bg-[#fa0e39] p-3 rounded text-white'>Sign Up</button>
                 </form>
                 <Link to='/signin' className="w-1/2 mx-auto text-[#252525]"><p>Already a user? Sign In Here.</p></Link>
             </Card>
