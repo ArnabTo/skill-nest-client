@@ -3,19 +3,19 @@ import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import useAxiosSecure from "./useAxiosSecure";
 
-const useAdmin = () => {
+const useTeacher = () => {
     const {user} = useContext(AuthContext);
     const axiosSecure = useAxiosSecure();
-    const {data: isAdmin, isPending: isAdminPending } = useQuery({
-         queryKey:[user?.email, 'isadmin'],
+    const {data: isTeacher, isPending: isTeacherPending } = useQuery({
+         queryKey:[user?.email, 'isTeacher'],
          queryFn: async()=>{
-             const res = await axiosSecure.get(`/users/admin/${user.email}`)
+             const res = await axiosSecure.get(`/users/teacher/${user.email}`)
              console.log(res.data)
              return res.data
          }
     })
 
-    return [isAdmin, isAdminPending]
+    return [isTeacher, isTeacherPending]
 };
 
-export default  useAdmin;
+export default useTeacher;

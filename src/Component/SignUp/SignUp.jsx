@@ -24,7 +24,8 @@ const SignUp = () => {
                         const userInfo = {
                             email: data.email,
                             name: data.name,
-                            image: data.photo
+                            image: data.photo,
+                            role: 'student'
                         }   
                         axiosPublic.post('/user', userInfo)
                             .then((res) => {
@@ -44,7 +45,8 @@ const SignUp = () => {
                 const userInfo = {
                     email: res.user.email,
                     name: res.user.displayName,
-                    image: res.user.photoURL
+                    image: res.user.photoURL,
+                    role: 'student'
                 }
                 axiosPublic.post('/user', userInfo)
                     .then(res => console.log(res.data))

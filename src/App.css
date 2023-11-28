@@ -1,6 +1,7 @@
 /* todo insteade of black #252525 */
 /* light #FE325B */
 /* bold #fc0939 */
+/* 4000056655665556 */
 #customShadow{
   box-shadow:
   0.2px 1.2px 1.2px rgba(0, 0, 0, 0.015),
@@ -68,3 +69,46 @@
     right: 48%;
     bottom: 50%;
   }
+
+
+  #customBtnCss {
+  align-items: center;
+  appearance: none;
+  border-radius: 4px;
+  border-width: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+}
+
+#customBtnCss:focus {
+  box-shadow: #ff4482 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #fa6583 0 -3px 0 inset;
+}
+
+#customBtnCss:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #f25093 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+#customBtnCss:active {
+  box-shadow: #e24f58 0 3px 7px inset;
+  transform: translateY(2px);
+}
