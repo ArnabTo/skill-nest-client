@@ -86,7 +86,7 @@ const Dashboard = () => {
     
                             <li>
                                 <NavLink
-                                    to='/dashboard/profile'
+                                    to='/dashboard/stdprofile'
                                     className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                                 >
                                     <div className='flex justify-start items-center text-lg'><FaCodePullRequest className='mr-2' />Profile</div>

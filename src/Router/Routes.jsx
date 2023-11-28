@@ -1,7 +1,9 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import Users from "../Component/Dashboard/Admin/Users";
+import EnClassDetails from "../Component/Dashboard/Student/EnClassDetails";
 import MyEnrolls from "../Component/Dashboard/Student/MyEnrolls";
+import Profile from "../Component/Dashboard/Student/Profile";
 import SignIn from "../Component/SignIn/SignIn";
 import SignUp from "../Component/SignUp/SignUp";
 import Dashboard from "../Layout/Dashboard";
@@ -66,7 +68,15 @@ export const router = createBrowserRouter([
             {
                 path: 'myenrolls',
                 element: <MyEnrolls></MyEnrolls>
-            }
+            },
+            {
+                path: 'stdprofile',
+                element: <Profile></Profile>
+            },
+            {
+                path: '/dashboard/myenroll-class/:id',
+                element: <EnClassDetails></EnClassDetails>,
+            },
         ]
     }
 ]);

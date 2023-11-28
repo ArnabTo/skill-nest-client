@@ -75,19 +75,19 @@ const CheckOutFrom = () => {
                     status: 'Completed'
                 }   
 
-               const res = await axiosSecure.patch(`/updateclassdata/${cart.classId}`)
-                console.log(res.data)
+            //    const res = await axiosSecure.patch(`/updateclassdata/${cart.classId}`)
+            //     console.log(res.data)
+                const enrollsInfo = {
+                    email: user.email,
+                    enrolledClassid: cart.classId,
+                }
+                console.log(enrollsInfo)
+                axiosSecure.post('/myenrolls',enrollsInfo )
+                .then(res => console.log(res))
 
                const result = await axiosSecure.post('/payments', paymentInfo)
                 console.log(result)
                 refetch();
-                // const enrollsInfo = {
-                //     email: user.email,
-                //     enrolledClassid: cart.classId,
-                // }
-                // axiosSecure.post('/myenrolls',enrollsInfo )
-                // .then(res => console.log(res))
-             
                 // navigate('/myenrolls');
             }
         }
