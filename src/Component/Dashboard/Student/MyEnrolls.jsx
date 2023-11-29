@@ -42,11 +42,7 @@ const MyEnrolls = () => {
         })
     },[axiosSecure, user.email])
 
-    const override = css`
-    display: block;
-    margin: 1rem 2rem;
-    border-color: red;
-  `;
+ 
     return (
         <div className="py-8 mx-4 ">
             <div>

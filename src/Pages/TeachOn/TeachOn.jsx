@@ -45,7 +45,7 @@ const TeachOn = () => {
     }
   }
   useEffect(() => {
-     axiosSecure.get(`/teacherrequest/${user?.email}`)
+     axiosSecure.get(`/teacherrequest/${user.email}`)
      .then(res =>{
       setReqData(res.data)
      })

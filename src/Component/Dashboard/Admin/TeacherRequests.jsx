@@ -40,9 +40,9 @@ const TeacherRequests = () => {
     }
     const handleReject = (id) => {
         axiosSecure.patch(`/teacherrequest/${id}`, { status: 'rejected' })
-        .then(res=> {
-            console.log(res.data)
-        })
+            .then(res => {
+                console.log(res.data)
+            })
     }
 
     return (
@@ -95,19 +95,19 @@ const TeacherRequests = () => {
                                             <Table.Cell>{data.category}</Table.Cell>
                                             <Table.Cell>{data.status}</Table.Cell>
                                             <Table.Cell>
-                                            {
-                                                 data.status === 'accepted' ?
-                                                 <button disabled onClick={() => handleAccept(data._id, data.email)} className='btn bg-[#6463638f] px-4 py-2 rounded text-white mx-2'>Accept</button>
-                                                 :
-                                                 <button disabled={dbtn} onClick={() => handleAccept(data._id, data.email)} className='btn bg-[#FE325B] px-4 py-2 rounded text-white mx-2'>Accept</button>
-                                            }
-                                              {
-                                                 data.status === 'rejected' ?
-                                                 <button disabled onClick={() => handleAccept(data._id, data.email)} className='btn bg-[#6463638f] px-4 py-2 rounded text-white mx-2'>Reject</button>
-                                                 :
-                                                 <button disabled={dbtn} onClick={() => handleReject(data._id)} className='btn bg-[#FE325B] px-4 py-2 rounded text-white'>Reject</button>
-                                              }
-                                               
+                                                {
+                                                    data.status === 'accepted' ?
+                                                        <button disabled onClick={() => handleAccept(data._id, data.email)} className='btn bg-[#6463638f] px-4 py-2 rounded text-white mx-2'>Accept</button>
+                                                        :
+                                                        <button disabled={dbtn} onClick={() => handleAccept(data._id, data.email)} className='btn bg-[#FE325B] px-4 py-2 rounded text-white mx-2'>Accept</button>
+                                                }
+                                                {
+                                                    data.status === 'rejected' ?
+                                                        <button disabled onClick={() => handleAccept(data._id, data.email)} className='btn bg-[#6463638f] px-4 py-2 rounded text-white mx-2'>Reject</button>
+                                                        :
+                                                        <button disabled={dbtn} onClick={() => handleReject(data._id)} className='btn bg-[#FE325B] px-4 py-2 rounded text-white'>Reject</button>
+                                                }
+
                                             </Table.Cell>
                                         </Table.Row>)
                             }

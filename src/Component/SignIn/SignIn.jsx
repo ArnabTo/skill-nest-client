@@ -58,7 +58,7 @@ const SignIn = () => {
 
     return (
         <div className='flex justify-between items-center my-24'>
-            <Card className="max-w-1/2 w-2/5 mx-auto" style={customShadow}>
+            <Card className="max-w-1/2 w-full md:w-2/5 mx-auto" style={customShadow}>
                 <Button color='red' onClick={handleSignWithGoogle}>
                     <p>Continue with</p>
                     <img className='h-12' src={googleGif} />

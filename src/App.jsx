@@ -1,15 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Nav from "./Component/Shared/Navbar/Nav";
-import Home from "./Pages/Home/Home";
 import PageTitle from "./PageTitle";
-
+import Foooter from "./Component/Footer/Footer";
 
 const App = () => {
   return (
-    <div>
+    <div className="max-w-screen-xl mx-auto">
     <PageTitle title={'SkillNest | Home'}></PageTitle>
        <Nav></Nav>
-       <Outlet></Outlet>
+       <Outlet ></Outlet>
+       <Foooter></Foooter>
     </div>
   );
 };

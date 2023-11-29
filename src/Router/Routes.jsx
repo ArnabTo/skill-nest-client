@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
 import AdProfile from "../Component/Dashboard/Admin/AdProfile";
+import AllClasses from "../Component/Dashboard/Admin/AllClasses";
 import TeacherRequests from "../Component/Dashboard/Admin/TeacherRequests";
 import Users from "../Component/Dashboard/Admin/Users";
 import EnClassDetails from "../Component/Dashboard/Student/EnClassDetails";
@@ -41,7 +42,7 @@ export const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><ClassDetails></ClassDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5003/allclasses/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5003/${params.id}`)
             },
             {
                 path: '/teachon',
@@ -69,6 +70,10 @@ export const router = createBrowserRouter([
             {
                 path: 'users',
                 element: <Users></Users>
+            },
+            {
+                path:'allclassreq',
+                element: <AllClasses></AllClasses>
             },
             {
                 path:'request',

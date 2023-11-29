@@ -3,14 +3,54 @@ import { Card, Badge } from 'flowbite-react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import '../../App.css'
-import { useKeenSlider } from "keen-slider/react"
-import "keen-slider/keen-slider.min.css"
+import "../../../node_modules/slick-carousel/slick/slick.css"
+import "../../../node_modules/slick-carousel/slick/slick-theme.css"
+import Slider from "react-slick";
 import { useEffect, useState } from "react";
 import BeatLoader from "react-spinners/BeatLoader";
 import { css } from "@emotion/react";
+
 const FeaturedClass = () => {
+
   const [loader, setLoader] = useState(true);
-  const [featuredClasses ,isPending] = FeaturedClasses();
+  const [featuredClasses] = FeaturedClasses();
+
+  var settings = {
+    dots: true,
+    infinite: false,
+    speed: 500,
+    slidesToShow: 4,
+    slidesToScroll: 4,
+    initialSlide: 0,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          initialSlide: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ]
+  };
+
+
   const StarDrawing = (
     <path
       d="M398.799,141.794c-43.394-3.977-86.776-6.52-130.158-8.418C258.835,99.302,242.633-4.751,193.173,0.169
@@ -21,37 +61,23 @@ const FeaturedClass = () => {
             C426.818,168.817,420.858,143.814,398.799,141.794z"
     />
   );
+
   const customStyles = {
     itemShapes: StarDrawing,
     activeFillColor: '#fc0939',
     inactiveFillColor: '#ffb6c5',
   };
-  const [sliderRef, slider] = useKeenSlider({
-    breakpoints: {
-      "(min-width: 400px)": {
-        slides: { perView: 2, spacing: 5 },
-      },
-      "(min-width: 1000px)": {
-        slides: { perView: 3, spacing: 10 },
-      },
-    },
-    slides: { perView: 1 },
-    initial: 0, // Set the initial slide index
-  });
-  
-
-  useEffect(() => {
-    if (sliderRef && slider) {
-      sliderRef.current?.refresh();
-      setLoader(false);
-    }
-  }, [sliderRef, slider]);
 
   const override = css`
   display: block;
   margin: 1rem 2rem;
   border-color: red;
 `;
+useEffect(() => {
+  if (featuredClasses && Slider) {
+    setLoader(false);
+  }
+}, [featuredClasses]);
 
   return (
     <div className="my-12">
@@ -63,8 +89,7 @@ const FeaturedClass = () => {
           Unlock Your Potential: Dive into Top-Rated and In-Demand Classes!
         </p>
       </div>
-
-      <div ref={sliderRef} className="keen-slider">
+      <Slider {...settings}>
         {
           loader ?
             <div className="spinnerCss">
@@ -75,23 +100,26 @@ const FeaturedClass = () => {
                 size={20}
                 aria-label="Loading Spinner"
                 data-testid="loader"
-              /> </div>
+              />
+            </div>
             :
+
             featuredClasses.map(fClass =>
-              <div className="keen-slider__slide number-slide1" key={fClass._id}>
+              <div key={fClass._id}>
                 <Card
                   className="max-w-sm "
                   imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
                   imgSrc={fClass.image}
+                  key={fClass._id}
                 >
-                  <a href="#">
+                  <div>
                     <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                       {fClass.title}
                     </h5>
                     <h5 className="text-sm font-semibold tracking-tight text-[#696969] my-2 dark:text-white">
                       {fClass.name}
                     </h5>
-                  </a>
+                  </div>
                   <div className="flex items-center">
                     <Rating
                       style={{ maxWidth: 120 }}
@@ -104,10 +132,13 @@ const FeaturedClass = () => {
                     <Badge color="success">Bestseller</Badge>
                   </div>
                 </Card>
-              </div>
-            )
+              </div>)
         }
-      </div>
+        <div>
+
+        </div>
+
+      </Slider>
     </div>
   );
 };

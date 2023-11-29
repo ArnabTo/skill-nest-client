@@ -5,7 +5,7 @@ import { AuthContext } from "../../../Provider/AuthProvider";
 const AdProfile = () => {
     const { user } = useContext(AuthContext)
     const axiosSecure = useAxiosSecure();
-    console.log(user)
+    // console.log(user)
     const [data, setUserData] = useState()
    useEffect(()=>{
         axiosSecure.get(`/user/${user?.email}`)

@@ -7,7 +7,6 @@ import useAxiosSecure from '../../../hooks/useAxiosSecure';
 
 const EnClassDetails = () => {
   const axiosSecure  = useAxiosSecure();
-  const [openModal, setOpenModal] = useState(false);
   const [ratingValue, setRatingValue] = useState(0);
   const { register, handleSubmit, getValues ,formState: { errors } } = useForm();
   const onSubmit = data => {
