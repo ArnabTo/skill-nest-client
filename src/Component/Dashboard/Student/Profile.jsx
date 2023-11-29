@@ -2,7 +2,9 @@
 const Profile = () => {
     return (
         <div>
-            xfdzf
+            <div>
+               <h1>Profile</h1>           
+            </div>
         </div>
     );
 };

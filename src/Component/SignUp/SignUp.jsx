@@ -7,7 +7,6 @@ import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
 import useAxiosPublic from "../../hooks/useAxiosPublic";
-import axios from "axios";
 const SignUp = () => {
     const axiosPublic = useAxiosPublic();
     const { user, createUser, updateUser, signInWithGoogle } = useContext(AuthContext);
