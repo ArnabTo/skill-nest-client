@@ -24,7 +24,7 @@ const Dashboard = () => {
     return (
         <div className='flex flex-col md:flex-row'>
             <div className="flex h-screen flex-col justify-between border-e bg-white">
-                <div className="px-4 py-6">
+            <div className="px-4 py-6">
                     <span
                         className="grid h-10 w-32 place-content-center rounded-lg bg-gray-100 text-xs text-gray-600"
                     >
@@ -38,10 +38,10 @@ const Dashboard = () => {
                         <ul className="mt-6 space-y-1">
                         <li>
                             <NavLink
-                                to='/dashboard/profile'
+                                to='/dashboard/adprofile'
                                 className="block rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700"
                             >
-                                <div className='flex justify-start items-center text-lg'><FaUserLarge className='mr-2' />Admin</div>
+                                <div className='flex justify-start items-center text-lg'><FaUserLarge className='mr-2' />Profile</div>
                             </NavLink>
                         </li>
                         <li>
@@ -101,35 +101,27 @@ const Dashboard = () => {
                         <ul className="mt-6 space-y-1">
                         <li>
                             <NavLink
-                                to='/dashboard/profile'
+                                to='/dashboard/tprofile'
                                 className="block rounded-lg bg-gray-100 px-4 py-2 text-sm font-medium text-gray-700"
                             >
-                                <div className='flex justify-start items-center text-lg'><FaUserLarge className='mr-2' />Teacher</div>
+                                <div className='flex justify-start items-center text-lg'><FaUserLarge className='mr-2' />Profile</div>
                             </NavLink>
                         </li>
                         <li>
                             <NavLink
-                                to='/dashboard/allclasses'
+                                to='/dashboard/addclass'
                                 className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                             >
-                                <div className='flex justify-start items-center text-lg'><FaBookReader className='mr-2' />All Classes</div>
+                                <div className='flex justify-start items-center text-lg'><FaBookReader className='mr-2' />Add Classes</div>
                             </NavLink>
                         </li>
 
                         <li>
                             <NavLink
-                                to='/dashboard/request'
+                                to='/dashboard/teacher-myclass'
                                 className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
                             >
-                                <div className='flex justify-start items-center text-lg'><FaCodePullRequest className='mr-2' />Teacher Requests</div>
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink
-                                to='/dashboard/users'
-                                className="block rounded-lg px-4 py-2 text-sm font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-700"
-                            >
-                                <div className='flex justify-start items-center text-lg'><FaUsers className='mr-2' />Users</div>
+                                <div className='flex justify-start items-center text-lg'><FaCodePullRequest className='mr-2' />My Class</div>
                             </NavLink>
                         </li>
                     </ul>

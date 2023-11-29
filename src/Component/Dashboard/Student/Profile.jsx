@@ -27,7 +27,7 @@ const Profile = () => {
                     <p className='text-2xl font-bold'><span className='text-[#FE325B]'>Phone Number:</span> {data?.phone}</p> 
                     <p className='text-2xl font-bold'><span className='text-[#FE325B]'>Role:</span> {data?.role}</p> 
                 </div>
-                <div className='flex-1'><img src="https://i.ibb.co/QfTJR75/undraw-Profile-re-4a55.png" /></div>
+                <div className='flex-1'><img id='floating' src="https://i.ibb.co/QfTJR75/undraw-Profile-re-4a55.png" /></div>
             </div>
         </div>
     );

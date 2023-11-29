@@ -1,10 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import AdProfile from "../Component/Dashboard/Admin/AdProfile";
 import TeacherRequests from "../Component/Dashboard/Admin/TeacherRequests";
 import Users from "../Component/Dashboard/Admin/Users";
 import EnClassDetails from "../Component/Dashboard/Student/EnClassDetails";
 import MyEnrolls from "../Component/Dashboard/Student/MyEnrolls";
 import Profile from "../Component/Dashboard/Student/Profile";
+import AddClass from "../Component/Dashboard/Teacher/AddClass";
+import MyClass from "../Component/Dashboard/Teacher/MyClass";
+import TProfile from "../Component/Dashboard/Teacher/TProfile";
 import SignIn from "../Component/SignIn/SignIn";
 import SignUp from "../Component/SignUp/SignUp";
 import Dashboard from "../Layout/Dashboard";
@@ -67,6 +71,14 @@ export const router = createBrowserRouter([
                 element: <Users></Users>
             },
             {
+                path:'request',
+                element: <TeacherRequests></TeacherRequests>
+            },
+            {
+                path:'adprofile',
+                element: <AdProfile></AdProfile>
+            },
+            {
                 path: 'myenrolls',
                 element: <MyEnrolls></MyEnrolls>
             },
@@ -79,8 +91,16 @@ export const router = createBrowserRouter([
                 element: <EnClassDetails></EnClassDetails>,
             },
             {
-                path:'request',
-                element: <TeacherRequests></TeacherRequests>
+                path: 'tprofile',
+                element: <TProfile></TProfile>
+            },
+            {
+                path: 'teacher-myclass',
+                element: <MyClass></MyClass>
+            },
+            {
+                path: 'addclass',
+                element: <AddClass></AddClass>
             }
         ]
     }
