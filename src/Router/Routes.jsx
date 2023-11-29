@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import App from "../App";
+import TeacherRequests from "../Component/Dashboard/Admin/TeacherRequests";
 import Users from "../Component/Dashboard/Admin/Users";
 import EnClassDetails from "../Component/Dashboard/Student/EnClassDetails";
 import MyEnrolls from "../Component/Dashboard/Student/MyEnrolls";
@@ -77,6 +78,10 @@ export const router = createBrowserRouter([
                 path: '/dashboard/myenroll-class/:id',
                 element: <EnClassDetails></EnClassDetails>,
             },
+            {
+                path:'request',
+                element: <TeacherRequests></TeacherRequests>
+            }
         ]
     }
 ]);

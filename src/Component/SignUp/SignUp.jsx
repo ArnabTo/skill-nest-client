@@ -18,12 +18,13 @@ const SignUp = () => {
 
         createUser(data.email, data.password)
             .then(() => {
-                updateUser(data.name, data.photo)
+                updateUser(data.name, data.photo, data.phone)
                     .then(() => {
                         const userInfo = {
                             email: data.email,
                             name: data.name,
                             image: data.photo,
+                            phone: data.phone,
                             role: 'student'
                         }   
                         axiosPublic.post('/user', userInfo)
@@ -101,6 +102,13 @@ const SignUp = () => {
                             <Label htmlFor="email" value="Your email" />
                         </div>
                         <TextInput id="email1" type="email" {...register('email')} placeholder="email" required />
+
+                    </div>
+                    <div>
+                        <div className="mb-2 block">
+                            <Label htmlFor="number" value="Your Phone Number" />
+                        </div>
+                        <TextInput id="number" type="phnumber" {...register('phone')} placeholder="Phone Number" required />
 
                     </div>
                     <div>
