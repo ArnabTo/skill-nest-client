@@ -63,7 +63,7 @@ const TeachOn = () => {
       </div>
       <div className='w-1/2 mx-auto'>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="flex max-w-md flex-col gap-4 m-auto">
+        <form onSubmit={handleSubmit(onSubmit)} className="flex max-w-md flex-col gap-4 m-auto" data-aos="fade-right">
           <div>
             <div className="mb-2 block">
               <Label htmlFor="name" value="Name" />

@@ -81,7 +81,7 @@ useEffect(() => {
 
   return (
     <div className="my-12">
-      <div className="text-center m-8">
+      <div className="text-center m-8" data-aos="zoom-in-up">
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
           Our Featured Classes
         </h2>
@@ -105,7 +105,7 @@ useEffect(() => {
             :
 
             featuredClasses.map(fClass =>
-              <div key={fClass._id}>
+              <div key={fClass._id} data-aos="zoom-in">
                 <Card
                   className="max-w-sm "
                   imgAlt="Apple Watch Series 7 in colors pink, silver, and black"

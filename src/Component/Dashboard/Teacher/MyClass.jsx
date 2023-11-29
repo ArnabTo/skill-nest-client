@@ -44,7 +44,7 @@ const MyClass = () => {
     }
     return (
         <div>
-            <div>My Classes</div>
+            <div><h2 className='text-center text-2xl font-bold my-12'>My Classes</h2></div>
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4'>
                 {
                     loader ?
@@ -63,7 +63,7 @@ const MyClass = () => {
                                 key={myClass._id}>
                                 <Card
                                     id="customShadow"
-                                    imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
+                                    imgAlt="Class Image"
                                     imgSrc={myClass.image}
                                     className='mx-8'
                                 >
@@ -71,25 +71,32 @@ const MyClass = () => {
                                         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
                                             {myClass.title}
                                         </h5>
-                                        <h5 className="text-sm font-semibold tracking-tight text-[#696969] my-2 dark:text-white">
+                                        <h5 className="text-sm font-semibold tracking-tight text-[#696969] dark:text-white">
                                             {myClass.name}
                                         </h5>
                                         <p>{myClass.email}</p>
                                     </div>
-                                    <div className="flex justify-between items-center">
+                                    <span className="flex justify-between items-center">
                                         <p>Price: {myClass.price}</p>
-                                        <p>Status: <span className='text-[red]'>{myClass.status}</span></p>
-                                    </div>
+                                        <p>Status: <span className='text-[#3df640]'>{myClass.status}</span></p>
+                                    </span>
                                     <div>
                                         <p>{myClass.discription}</p>
                                     </div>
                                     <div className="flex items-center justify-between">
                                         <span className="text-xl font-bold text-[#696969] dark:text-white">{myClass.price}$</span>
-                                        <Link to={`/details/${myClass._id}`}><button className="bg-[#FE325Bed] px-6 py-2 rounded-md text-[white] hover:bg-[#fc0939]">Details</button></Link>
+                                      
+                                       
                                     </div>
                                     <div className="flex items-center justify-between">
                                         <button onClick={() => handleDelete(myClass._id)} className="bg-[#252525] px-4 py-2 rounded-md text-[white] hover:bg-[#fc0939]">Delete</button>
-                                        <button className="bg-[#FE325Bed] px-4 py-2 rounded-md text-[white] hover:bg-[#fc0939]">Update</button>
+                                        {
+                                            myClass && myClass.status === 'approved' ?
+                                            <Link to={`/dashboard/class/${myClass._id}`}><button className="bg-[#FE325Bed] px-6 py-2 rounded-md text-[white] hover:bg-[#fc0939]">Details</button></Link>
+                                            :
+                                            <button disabled >Details</button>
+                                        }
+                                        <button className="bg-[#fc0939] px-4 py-2 rounded-md text-[white] hover:bg-[#fc0939]">Update</button>
                                     </div>
                                 </Card>
                             </Tilt>

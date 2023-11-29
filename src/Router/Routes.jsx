@@ -9,6 +9,7 @@ import MyEnrolls from "../Component/Dashboard/Student/MyEnrolls";
 import Profile from "../Component/Dashboard/Student/Profile";
 import AddClass from "../Component/Dashboard/Teacher/AddClass";
 import MyClass from "../Component/Dashboard/Teacher/MyClass";
+import TeacherClassDetails from "../Component/Dashboard/Teacher/TeacherClassDetails";
 import TProfile from "../Component/Dashboard/Teacher/TProfile";
 import SignIn from "../Component/SignIn/SignIn";
 import SignUp from "../Component/SignUp/SignUp";
@@ -42,7 +43,7 @@ export const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><ClassDetails></ClassDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5003/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5003/allclasses/${params.id}`)
             },
             {
                 path: '/teachon',
@@ -102,6 +103,10 @@ export const router = createBrowserRouter([
             {
                 path: 'teacher-myclass',
                 element: <MyClass></MyClass>
+            },
+            {
+                path: '/dashboard/class/:id',
+                element: <TeacherClassDetails></TeacherClassDetails>
             },
             {
                 path: 'addclass',

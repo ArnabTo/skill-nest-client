@@ -7,7 +7,7 @@ import { css } from "@emotion/react";
 const PrivateRoute = ({children}) => {
     const { user, loading } = useContext(AuthContext);
     const location = useLocation();
-    console.log(location)
+    // console.log(location)
     const override = css`
     display: block;
     margin: 1rem 2rem;

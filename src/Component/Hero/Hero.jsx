@@ -7,7 +7,8 @@ const Hero = () => {
         <div className='flex flex-col lg:flex-row justify-center items-center'>
             <div
                 className="relative mx-auto max-w-screen-xl px-4 sm:px-6 lg:flex lg:h-screen lg:items-center lg:px-8"
-            >
+                data-aos="fade-right"
+                >
                 <div className="max-w-lg text-left ltr:sm:text-left rtl:sm:text-right">
                     <h1 className="text-3xl font-extrabold sm:text-5xl text-[#252525]">
                     Elevate Your 
@@ -37,7 +38,7 @@ const Hero = () => {
                     </div>
                 </div>
             </div>
-            <div>
+            <div data-aos="fade-left">
                <img className='hidden md:block max-w-xl' id='floating' src={banner}/>
             </div>
             </div>

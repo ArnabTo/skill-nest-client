@@ -14,14 +14,21 @@ const AllClasses = () => {
     })
 
     const handleApprove =(id)=>{
-           axiosSecure.patch(`/pendingclasses/${id}`)
+           axiosSecure.patch(`/pendingclassapprove/${id}`)
            .then(res => {
             if(res.data.message === 'succeed'){
-                toast.success('Class was Approved')
+                toast.success('Class status changed to approved')
             }
         })
     }
-
+    const handleReject =(id)=>{
+        axiosSecure.patch(`/pendingclassreject/${id}`)
+        .then(res=>{
+            if(res.data.message === 'succeed'){
+                toast.success('Class status changed to rejected')
+            }
+        })
+    }
     return (
         <div className="mx-4 my-8">
             <Table hoverable>
@@ -49,7 +56,7 @@ const AllClasses = () => {
                         <Table.Cell>{cData.status}</Table.Cell>
                         <Table.Cell className="flex flex-col gap-2">
                          <button onClick={()=>handleApprove(cData._id)} className="btn bg-[#FE325B] px-3 py-1 text-white rounded">Approve</button>
-                         <button className="btn bg-[#252525] px-3 py-1 text-white rounded">Reject</button>
+                         <button onClick={()=>handleReject(cData._id)} className="btn bg-[#252525] px-3 py-1 text-white rounded">Reject</button>
                         </Table.Cell>
                       </Table.Row>)
                  }

@@ -88,7 +88,7 @@ const CheckOutFrom = () => {
                const result = await axiosSecure.post('/payments', paymentInfo)
                 console.log(result)
                 refetch();
-                // navigate('/myenrolls');
+                navigate('/dashboard/myenrolls');
             }
         }
     }
