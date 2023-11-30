@@ -75,7 +75,7 @@ const ClassDetails = () => {
                 <li className="text-lg font-semibold mb-2 flex gap-2"><Infinity color="#FE325B" />Life Time Access</li>
                 <li className="text-lg font-semibold mb-2 flex gap-2"><Medal color="#FE325B" />Certificate on completion</li>
                 <li className="text-lg font-semibold mb-2 text-gray-500">#programming, #development</li>
-                <li><Link to='/payment'><button id="customBtnCss" onClick={()=>handlePayment(classData)} className="btn bg-[#FE325B] w-full py-4 text-xl text-white font-semibold rounded">Pay</button></Link></li>
+                <li><Link to={`/payment/${classData._id}`}><button id="customBtnCss" onClick={()=>handlePayment(classData)} className="btn bg-[#FE325B] w-full py-4 text-xl text-white font-semibold rounded">Pay</button></Link></li>
               </ul>
             </div>
           </div>

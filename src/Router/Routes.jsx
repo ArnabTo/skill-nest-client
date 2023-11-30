@@ -18,8 +18,10 @@ import PageError from "../Pages/404/PageError";
 import ClassDetails from "../Pages/AllClass/ClassDetails";
 import Classes from "../Pages/AllClass/Classes";
 import Home from "../Pages/Home/Home";
+import CompletePayment from "../Pages/Payment/CompletePayment";
 import Payment from "../Pages/Payment/Payment";
 import TeachOn from "../Pages/TeachOn/TeachOn";
+import AdminRoutes from "./AdminRoutes";
 import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
@@ -58,6 +60,10 @@ export const router = createBrowserRouter([
                 element: <SignUp></SignUp>
             },
             {
+                path:'/payment/:id',
+                element: <CompletePayment></CompletePayment>
+            },
+            {
                 path: '/payment',
                 element: <Payment />
             },
@@ -70,19 +76,19 @@ export const router = createBrowserRouter([
         [
             {
                 path: 'users',
-                element: <Users></Users>
+                element: <AdminRoutes><Users></Users></AdminRoutes>
             },
             {
                 path:'allclassreq',
-                element: <AllClasses></AllClasses>
+                element: <AdminRoutes><AllClasses></AllClasses></AdminRoutes>
             },
             {
                 path:'request',
-                element: <TeacherRequests></TeacherRequests>
+                element: <AdminRoutes><TeacherRequests></TeacherRequests></AdminRoutes>
             },
             {
                 path:'adprofile',
-                element: <AdProfile></AdProfile>
+                element: <AdminRoutes><AdProfile></AdProfile></AdminRoutes>
             },
             {
                 path: 'myenrolls',

@@ -7,7 +7,8 @@ import { AuthContext } from "../../Provider/AuthProvider";
 import toast, { Toaster } from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
 
-const CheckOutFrom = () => {
+const CheckOutFrom = ({pClassId}) => {
+    // console.log(pClassId)
     const [error, setError] = useState('');
     const [clientSecret, setClientSecret] = useState('');
     const  [transactionid, setTransactionId] = useState('')
@@ -75,8 +76,6 @@ const CheckOutFrom = () => {
                     status: 'Completed'
                 }   
 
-            //    const res = await axiosSecure.patch(`/updateclassdata/${cart.classId}`)
-            //     console.log(res.data)
                 const enrollsInfo = {
                     email: user.email,
                     enrolledClassid: cart.classId,
@@ -88,7 +87,9 @@ const CheckOutFrom = () => {
                const result = await axiosSecure.post('/payments', paymentInfo)
                 console.log(result)
                 refetch();
-                navigate('/dashboard/myenrolls');
+                axiosSecure.patch(`/updateclassdata/${pClassId}`)
+                .then(res=> console.log(res.data))
+                navigate('/dashboard/myenrolls')
             }
         }
     }
