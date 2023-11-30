@@ -3,13 +3,14 @@ import { useForm } from 'react-hook-form';
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
 import { AuthContext } from '../../../Provider/AuthProvider';
 import toast, { Toaster } from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 const AddClass = () => {
     const {user} = useContext(AuthContext);
     const [userData, setUserData] = useState();
     const axiosSecure = useAxiosSecure();
     const { register, handleSubmit, formState: { errors }, } = useForm();
     // console.log(user)
-
+    const navigate = useNavigate();
     useEffect(()=>{
         axiosSecure.get(`/user/${user.email}`)
         .then(res=>{
@@ -27,7 +28,7 @@ const AddClass = () => {
             image: data.photo,
             userId: userData._id,
             total_enrollment: 0,
-            status: 'Pending'
+            status: 'pending'
         }
         // console.log(userData)
         axiosSecure.post('/classes', classInfo)
@@ -35,6 +36,7 @@ const AddClass = () => {
             console.log(res)
             if(res.data.message === 'succeed'){
                toast.success('Class is added to review!')
+               navigate('/dashboard/teacher-myclass')
             }
         })
     }

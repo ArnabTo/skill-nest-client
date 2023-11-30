@@ -9,7 +9,7 @@ const ClassDetails = () => {
   const {user} = useContext(AuthContext);
   const axiosSecure = useAxiosSecure();
   const classData = useLoaderData();
-  console.log(classData)
+  // console.log(classData)
 
   const StarDrawing = (
     <path
@@ -51,7 +51,7 @@ const ClassDetails = () => {
             Details
           </h2>
         </header>
-        <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-4 h-full">
+        <div className="flex flex-col-reverse lg:flex-row justify-between items-center gap-4 h-full" data-aos="fade-up">
           <div className="mt-12 bg-[#252525] text-white rounded px-4 py-6 flex-1 h-[35rem]">
             <h2 className="text-2xl font-extrabold my-8">{classData.title}<br />
               <p className="text-lg text-[#FE325B] mb-2">From: {classData.name}</p>
@@ -62,7 +62,7 @@ const ClassDetails = () => {
               />
               <span className="text-sm">Total Enrollments: {classData.total_enrollment}</span><br/>
             </h2>
-            <p>{classData.short_description}</p>
+            <p>{classData.discription}</p>
           </div>
           <div className="flex flex-col w-[100%] md:w-auto">
             <img className="max-w-sm rounded" src={classData.image} />

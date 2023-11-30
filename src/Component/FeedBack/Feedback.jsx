@@ -43,7 +43,7 @@ const Feedback = () => {
                 <div
                     className="flex flex-col justify-center rounded"
                 >
-                    <div className="text-center m-8">
+                    <div className="text-center m-8" data-aos="zoom-in">
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                             Student Feedback
                         </h2>
@@ -77,7 +77,7 @@ const Feedback = () => {
                                     /> </div>
                                 :
                                 reviews.map(rev => (
-                                    <SwiperSlide key={rev._id}>
+                                    <SwiperSlide key={rev._id} data-aos="zoom-in">
                                         <figure className="mx-auto max-w-screen-md text-center  my-12">
                                             <svg
                                                 className="mx-auto mb-3 h-10 w-10 text-gray-400 dark:text-gray-600"

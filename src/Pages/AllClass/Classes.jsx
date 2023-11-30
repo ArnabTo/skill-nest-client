@@ -74,6 +74,7 @@ const Classes = () => {
                                     imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
                                     imgSrc={allc.image}
                                    className='mx-8'
+                                   data-aos="fade-up"
                                 >
                                     <div href="#">
                                         <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">

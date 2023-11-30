@@ -3,10 +3,10 @@ import { NavLink } from "react-router-dom";
 const Bteacher = () => {
     return (
         <div className="flex flex-col md:flex-row">
-            <div className=" rounded-lg flex-1">
+            <div className=" rounded-lg flex-1" data-aos="fade-up">
                 <img id="floating" src="https://i.ibb.co/FD8V42K/undraw-Educator-re-ju47-1.png" />
             </div>
-            <div className=" rounded-lg  flex flex-col justify-center px-4 gap-4 flex-1">
+            <div className=" rounded-lg  flex flex-col justify-center px-4 gap-4 flex-1" data-aos="fade-up">
                 <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                 Unlock Your Potential: Join Our Team of Dedicated Educators!
                 </h2>
