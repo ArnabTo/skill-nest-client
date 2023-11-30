@@ -12,6 +12,7 @@ const MyEnrolls = () => {
     const [classData, setClassData] = useState([])
     const [allEnrolls, setAllEnolls] = useState([])
     const [loader, setLoader] = useState(true);
+    
     useEffect(() => {
         axiosSecure.get(`/myenrolls/${user.email}`)
             .then(res => {
@@ -19,7 +20,7 @@ const MyEnrolls = () => {
                 console.log(res.data)
             })
 
-    }, [axiosSecure, user.email])
+    }, [axiosSecure, user?.email])
     useEffect(() => {
         const enrolledClassInfo = {
             email: user.email,
@@ -36,13 +37,13 @@ const MyEnrolls = () => {
     }, [axiosSecure, classData.title, classData.name, classData.image, classData.short_description, user.email])
 
     useEffect(()=>{
-        axiosSecure.get(`/allenrolled/${user.email}`)
+        axiosSecure.get(`/allenrolled/${user?.email}`)
         .then(res => {
             setAllEnolls(res.data)
+            console.log(res.data)
         })
     },[axiosSecure, user.email])
 
- 
     return (
         <div className="py-8 mx-4 ">
             <div>
