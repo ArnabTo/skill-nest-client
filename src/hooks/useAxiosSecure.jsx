@@ -5,7 +5,7 @@ import { AuthContext } from "../Provider/AuthProvider";
 
 const axiosSecure = axios.create(
     {
-        baseURL: 'http://localhost:5003/'
+        baseURL: 'https://skill-nest-server.vercel.app/'
     }
 )
 

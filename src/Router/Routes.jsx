@@ -45,7 +45,7 @@ export const router = createBrowserRouter([
             {
                 path: '/details/:id',
                 element: <PrivateRoute><ClassDetails></ClassDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5003/allclasses/${params.id}`)
+                loader: ({ params }) => fetch(`https://skill-nest-server.vercel.app/allclasses/${params.id}`)
             },
             {
                 path: '/teachon',
