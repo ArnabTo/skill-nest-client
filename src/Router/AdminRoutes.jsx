@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import useAdmin from "../../../../../Module 66/bistro-boss-client-menu-and-order/src/hooks/useAdmin";
+import useAdmin from "../hooks/useAdmin";
 import { AuthContext } from "../Provider/AuthProvider";
 import { css } from "@emotion/react";
 import BeatLoader from "react-spinners/BeatLoader";

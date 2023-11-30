@@ -17,19 +17,21 @@ const MyEnrolls = () => {
         axiosSecure.get(`/myenrolls/${user.email}`)
             .then(res => {
                 setClassData(res.data)
-                console.log(res.data)
+                // console.log(res.data)
             })
 
     }, [axiosSecure, user?.email])
     useEffect(() => {
+        console.log(classData)
         const enrolledClassInfo = {
             email: user.email,
             title: classData.title,
             name: classData.name,
             image: classData.image,
+            classId: classData._id,
             disc: classData.short_description
         }
-        // console.log(enrolledClassInfo)
+        console.log(enrolledClassInfo)
         axiosSecure.post('/allenrolled', enrolledClassInfo)
             .then(res => {
                  console.log(res.data)
@@ -40,7 +42,7 @@ const MyEnrolls = () => {
         axiosSecure.get(`/allenrolled/${user?.email}`)
         .then(res => {
             setAllEnolls(res.data)
-            console.log(res.data)
+            // console.log(res.data)
         })
     },[axiosSecure, user.email])
 

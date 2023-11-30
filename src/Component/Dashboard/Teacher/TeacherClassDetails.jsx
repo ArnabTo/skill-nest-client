@@ -1,8 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 import useClasses from '../../../hooks/useClasses';
 import { Label, Textarea, TextInput } from 'flowbite-react';
-import { useForm } from 'react-hook-form';
 import DatePicker from "react-datepicker";
 import '../../../../node_modules/react-datepicker/dist/react-datepicker.css'
 import useAxiosSecure from '../../../hooks/useAxiosSecure';
@@ -58,11 +57,15 @@ const TeacherClassDetails = () => {
         setTotalAssinmentNumber(res.data.length)
       })
   }, [axiosSecure, setTotalAssinmentNumber])
+
+  const handleClose=()=>{
+            document.getElementById('my_modal_1').close();
+  }
   return (
     <div>
       <div>
         <h2 className='text-center text-2xl font-bold my-8'>Class Progress</h2>
-        <div className='flex justify-center my-8'>
+        <div className='flex flex-col lg:flex-row justify-center my-8 w-full'>
           <div className='w-[20rem] h-[10rem] bg-[#252525] border-r-white border-[2px] text-white rounded-md'>
             <h2 className='text-3xl text-center font-extrabold text-[#FE325B] mt-8'>
               {
@@ -85,38 +88,44 @@ const TeacherClassDetails = () => {
         </div>
       </div>
       <div>
-        <h2 className='text-center text-2xl font-bold'>Add Assignment</h2>
-        <div>
-          <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>
-            <PlusCircle />
-            Create</button>
-          <dialog id="my_modal_1" className="modal">
-            <div className="modal-box">
-              <div className="modal-action justify-center">
-                <form onSubmit={handleSubmit} method="dialog" className='w-[25rem]'>
-                  <div className='mb-2'>
-                    <div className="mb-2 block">
-                      <Label htmlFor="title" value="Title" />
+        <h2 className='text-center text-2xl font-bold mb-12'>Add Assignment</h2>
+        <div className='flex flex-col-reverse justify-center items-center'>
+          <div>
+            <button className="btn" onClick={() => document.getElementById('my_modal_1').showModal()}>
+              <PlusCircle />
+              Create</button>
+            <dialog id="my_modal_1" className="modal">
+              <div className="modal-box">
+                <div className="modal-action justify-center">
+                  <form onSubmit={handleSubmit} method="dialog" className='w-[25rem]'>
+                    <div className='mb-2'>
+                      <div className="mb-2 block">
+                        <Label htmlFor="title" value="Title" />
+                      </div>
+                      <TextInput id="title" type="text" name='title' placeholder="Assignment title" required />
                     </div>
-                    <TextInput id="title" type="text" name='title' placeholder="Assignment title" required />
-                  </div>
-                  <div className='mb-2'>
-                    <div className="mb-2 block">
-                      <Label htmlFor="date" value="Deadline" />
+                    <div className='mb-2'>
+                      <div className="mb-2 block">
+                        <Label htmlFor="date" value="Deadline" />
+                      </div>
+                      <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
                     </div>
-                    <DatePicker selected={startDate} onChange={(date) => setStartDate(date)} />
-                  </div>
-                  <div className="max-w-md">
-                    <div className="mb-2 block">
-                      <Label htmlFor="comment" value="Description" />
+                    <div className="max-w-md">
+                      <div className="mb-2 block">
+                        <Label htmlFor="comment" value="Description" />
+                      </div>
+                      <Textarea id="comment" name='description' placeholder="Assignment details..." required rows={4} />
                     </div>
-                    <Textarea id="comment" name='description' placeholder="Assignment details..." required rows={4} />
-                  </div>
-                  <button type='submit' className="btn bg-[#252525] my-4 text-white">Create <PlusCircle /></button>
-                </form>
+                    <button type='submit' className="btn bg-[#252525] my-4 text-white">Create <PlusCircle /></button>
+                    <button onClick={handleClose} type='btn' className="btn bg-[#252525] my-4 text-white">close</button>
+                  </form>
+                </div>
               </div>
-            </div>
-          </dialog>
+            </dialog>
+          </div>
+          <div>
+           <img className='max-w-md' src='https://i.ibb.co/p21s71Q/undraw-Add-tasks-re-s5yj.png'/>
+          </div>
         </div>
       </div>
       <Toaster

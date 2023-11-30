@@ -12,13 +12,13 @@ const Foooter = () => {
             alt="Flowbite Logo"
           />
           <Footer.LinkGroup>
-            <Footer.Link href="#">About</Footer.Link>
-            <Footer.Link href="#">Privacy Policy</Footer.Link>
-            <Footer.Link href="#">Licensing</Footer.Link>
+            <Footer.Link href="#">Home</Footer.Link>
+            <Footer.Link href="#">All Classes</Footer.Link>
+            <Footer.Link href="#">Teach on SkillNest</Footer.Link>
             <Footer.Link href="#">Contact</Footer.Link>
           </Footer.LinkGroup>
         </div>
-        <Footer.Copyright href="#" by="ARSDeEV" year={20224} />
+        <Footer.Copyright href="#" by="ARSDEV" year={2024} />
       </div>
     </Footer>
     </div>

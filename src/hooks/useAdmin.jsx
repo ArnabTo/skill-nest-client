@@ -18,4 +18,4 @@ const useAdmin = () => {
     return [isAdmin, isAdminPending]
 };
 
-export default  useAdmin;
+export default useAdmin;
