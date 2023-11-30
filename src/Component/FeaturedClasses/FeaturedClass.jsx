@@ -15,6 +15,7 @@ const FeaturedClass = () => {
   const [loader, setLoader] = useState(true);
   const [featuredClasses] = FeaturedClasses();
 
+ 
   var settings = {
     dots: true,
     infinite: false,
@@ -50,7 +51,6 @@ const FeaturedClass = () => {
     ]
   };
 
-
   const StarDrawing = (
     <path
       d="M398.799,141.794c-43.394-3.977-86.776-6.52-130.158-8.418C258.835,99.302,242.633-4.751,193.173,0.169
@@ -73,11 +73,11 @@ const FeaturedClass = () => {
   margin: 1rem 2rem;
   border-color: red;
 `;
-useEffect(() => {
-  if (featuredClasses && Slider) {
-    setLoader(false);
-  }
-}, [featuredClasses]);
+  useEffect(() => {
+    if (featuredClasses && Slider) {
+      setLoader(false);
+    }
+  }, [featuredClasses]);
 
   return (
     <div className="my-12">
@@ -121,11 +121,11 @@ useEffect(() => {
                     </h5>
                   </div>
                   <div className="flex items-center">
-                    <Rating
-                      style={{ maxWidth: 120 }}
-                      value={Math.floor(fClass.rating)}
-                      itemStyles={customStyles}
-                    />
+                  <Rating
+                  style={{ maxWidth: 300 }}
+                  value={Math.floor(fClass.rating)}
+                  itemStyles={customStyles}
+                />
                   </div>
                   <div className="flex items-center justify-between">
                     <span className="text-xl font-bold text-[#696969] dark:text-white">{fClass.price}$</span>

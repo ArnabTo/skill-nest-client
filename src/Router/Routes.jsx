@@ -49,7 +49,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: '/teachon',
-                element: <TeachOn></TeachOn>
+                element: <PrivateRoute><TeachOn></TeachOn></PrivateRoute>
             },
             {
                 path: '/signin',
