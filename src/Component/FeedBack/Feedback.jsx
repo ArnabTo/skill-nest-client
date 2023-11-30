@@ -1,7 +1,5 @@
-import { useKeenSlider } from "keen-slider/react"
 import { Avatar, Blockquote } from 'flowbite-react';
 import { Swiper, SwiperSlide } from "swiper/react";
-import "keen-slider/keen-slider.min.css"
 import { useEffect, useState } from "react";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
 import BeatLoader from "react-spinners/BeatLoader";
@@ -28,42 +26,7 @@ const Feedback = () => {
         }
         fechFeedBackData();
     }, [axioxPublic])
-    //slider settings
-    const [sliderRef] = useKeenSlider(
-        {
-            loop: true,
-        },
-        [
-            (slider) => {
-                let timeout
-                let mouseOver = false
-                function clearNextTimeout() {
-                    clearTimeout(timeout)
-                }
-                function nextTimeout() {
-                    clearTimeout(timeout)
-                    if (mouseOver) return
-                    timeout = setTimeout(() => {
-                        slider.next()
-                    }, 2000)
-                }
-                slider.on("created", () => {
-                    slider.container.addEventListener("mouseover", () => {
-                        mouseOver = true
-                        clearNextTimeout()
-                    })
-                    slider.container.addEventListener("mouseout", () => {
-                        mouseOver = false
-                        nextTimeout()
-                    })
-                    nextTimeout()
-                })
-                slider.on("dragStarted", clearNextTimeout)
-                slider.on("animationEnded", nextTimeout)
-                slider.on("updated", nextTimeout)
-            },
-        ]
-    )
+
 
     //spiner settings
     const override = css`

@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyCN_OkUVg1uzCk4whgnpXCeWEg-ssGlANM",
-  authDomain: "skill-nest.firebaseapp.com",
-  projectId: "skill-nest",
-  storageBucket: "skill-nest.appspot.com",
-  messagingSenderId: "589915122071",
-  appId: "1:589915122071:web:4beac62c980cd728adfcd2"
+  apiKey: "AIzaSyAxHKCY_frbNbPZ7stVz_wadCaOVlXpnW4",
+  authDomain: "skill-nest-class-managem-23b79.firebaseapp.com",
+  projectId: "skill-nest-class-managem-23b79",
+  storageBucket: "skill-nest-class-managem-23b79.appspot.com",
+  messagingSenderId: "174406412617",
+  appId: "1:174406412617:web:8889baf0db11585df9d298"
 };
 
 // Initialize Firebase
