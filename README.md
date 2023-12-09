@@ -1,7 +1,5 @@
 # Student and Class Management System
 
-[![Skill Nest](https://streak-stats.demolab.com?user=ArnabTo&theme=soft-green&hide_border=true&border_radius=6&card_width=500)](https://skill-nest.netlify.app)
-
 A comprehensive Student and Class Management System built using the MERN stack.
 
 ## Key Features
@@ -26,15 +24,6 @@ Check out the live site: [Skill Nest](https://skill-nest.netlify.app)
 
 ## GitHub Repository
 
-Explore the codebase on GitHub: [Skill Nest GitHub](https://github.com/ArnabTo/skill-nestclient)
+Explore the server side on GitHub: [Skill Nest GitHub](https://github.com/ArnabTo/skill-nest-server)
 
-## Getting Started
-
-1. Clone the repository: `git clone https://github.com/ArnabTo/skill-nestclient.git`
-2. Install dependencies: `npm install`
-3. Start the development server: `npm start`
-
-Feel free to contribute, report issues, or suggest improvements.
-
-Happy coding!
 
