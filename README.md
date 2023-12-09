@@ -24,6 +24,6 @@ Check out the live site: [Skill Nest](https://skill-nest.netlify.app)
 
 ## GitHub Repository
 
-Explore the server side on GitHub: [Skill Nest GitHub](https://github.com/ArnabTo/skill-nest-server)
+Explore the server side on GitHub: [Skill Nest Server GitHub](https://github.com/ArnabTo/skill-nest-server)
 
 
