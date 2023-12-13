@@ -21,13 +21,14 @@ import Home from "../Pages/Home/Home";
 import CompletePayment from "../Pages/Payment/CompletePayment";
 import Payment from "../Pages/Payment/Payment";
 import TeachOn from "../Pages/TeachOn/TeachOn";
+import { ThemeProvider } from "../ThemeContext";
 import AdminRoutes from "./AdminRoutes";
 import PrivateRoute from "./PrivateRoute";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <App></App>,
+        element: <ThemeProvider><App></App></ThemeProvider>,
         errorElement: <PageError></PageError>,
         children: [
             {

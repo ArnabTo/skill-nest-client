@@ -9,9 +9,10 @@ import Slider from "react-slick";
 import { useEffect, useState } from "react";
 import BeatLoader from "react-spinners/BeatLoader";
 import { css } from "@emotion/react";
+import { useTheme } from "../../ThemeContext";
 
 const FeaturedClass = () => {
-
+  const { darkMode } = useTheme();
   const [loader, setLoader] = useState(true);
   const [featuredClasses] = FeaturedClasses();
 
@@ -82,10 +83,10 @@ const FeaturedClass = () => {
   return (
     <div className="my-12">
       <div className="text-center m-8" data-aos="zoom-in-up">
-        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl" style={{ color: darkMode ? 'white' : '#111827' }}>
           Our Featured Classes
         </h2>
-        <p className="mt-4 text-gray-700">
+        <p className="mt-4 text-gray-700" style={{ color: darkMode ? 'white' : '#374151' }}>
           Unlock Your Potential: Dive into Top-Rated and In-Demand Classes!
         </p>
       </div>
@@ -105,15 +106,16 @@ const FeaturedClass = () => {
             :
 
             featuredClasses.map(fClass =>
-              <div key={fClass._id} data-aos="zoom-in">
+              <div key={fClass._id} data-aos="zoom-in" >
                 <Card
                   className="max-w-sm "
                   imgAlt="Apple Watch Series 7 in colors pink, silver, and black"
                   imgSrc={fClass.image}
                   key={fClass._id}
+                  style={{ background: darkMode ? '#252525' : '#fff', color: darkMode ? 'white' : 'red' }}
                 >
                   <div>
-                    <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white">
+                    <h5 className="text-xl font-semibold tracking-tight text-gray-900 dark:text-white" style={{ color: darkMode ? 'white' : '#252525' }}>
                       {fClass.title}
                     </h5>
                     <h5 className="text-sm font-semibold tracking-tight text-[#696969] my-2 dark:text-white">
@@ -128,7 +130,7 @@ const FeaturedClass = () => {
                 />
                   </div>
                   <div className="flex items-center justify-between">
-                    <span className="text-xl font-bold text-[#696969] dark:text-white">{fClass.price}$</span>
+                    <span className="text-xl font-bold text-[#696969] dark:text-white" style={{ color: darkMode ? 'white' : '#696969' }}>{fClass.price}$</span>
                     <Badge color="success">Bestseller</Badge>
                   </div>
                 </Card>

@@ -9,7 +9,9 @@ import 'swiper/css/pagination';
 import 'swiper/css/navigation';
 import '../../App.css'
 import { Pagination, Navigation } from 'swiper/modules';
+import { useTheme } from '../../ThemeContext';
 const Feedback = () => {
+    const { darkMode } = useTheme();
     const [loader, setLoader] = useState(true);
     const [reviews, setReviews] = useState();
     const axioxPublic = useAxiosPublic();
@@ -37,7 +39,7 @@ const Feedback = () => {
   `;
 
     return (
-        <section className="bg-gray-50 my-12 rounded">
+        <section className="bg-gray-50 my-12 rounded"  style={{ background: darkMode ? '#252525' : '#f9fafb'}}>
             <div
                 className="mx-auto max-w-[1340px] px-4 py-12 sm:px-6 lg:me-0 rounded "
             >
@@ -45,10 +47,10 @@ const Feedback = () => {
                     className="flex flex-col justify-center rounded"
                 >
                     <div className="text-center m-8" data-aos="zoom-in">
-                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                        <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl" style={{ color: darkMode ? 'white' : '#111827' }}>
                             Student Feedback
                         </h2>
-                        <p className="mt-4 text-gray-700">
+                        <p className="mt-4 text-gray-700" style={{ color: darkMode ? 'white' : '#374151' }}>
                             We value your feedback! Share your thoughts on classes, instructors, or any
                             aspect of your academic experience. Your insights help us improve
                             and create a better learning environment for everyone
@@ -90,7 +92,7 @@ const Feedback = () => {
                                                 <path d="M6 0H2a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3H2a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Zm10 0h-4a2 2 0 0 0-2 2v4a2 2 0 0 0 2 2h4v1a3 3 0 0 1-3 3h-1a1 1 0 0 0 0 2h1a5.006 5.006 0 0 0 5-5V2a2 2 0 0 0-2-2Z" />
                                             </svg>
                                             <Blockquote>
-                                                <p className="text-2xl font-medium italic text-gray-900 dark:text-white">
+                                                <p className="text-2xl font-medium italic text-gray-900 dark:text-white" >
                                                     "{rev.feedback}"
                                                 </p>
                                             </Blockquote>

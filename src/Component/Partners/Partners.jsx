@@ -1,6 +1,7 @@
 import Tilt from 'react-parallax-tilt';
-
+import { useTheme } from '../../ThemeContext';
 const Partners = () => {
+    const { darkMode } = useTheme();
     const containerStyle = {
         background: 'rgba(255, 255, 255, 0.22)',
         borderRadius: '16px',
@@ -12,7 +13,7 @@ const Partners = () => {
     return (
         <div className='my-14' data-aos="zoom-in" >
             <div style={containerStyle}>
-            <p className='text-center my-4 text-[#242424] font-medium'>Preferred by 20,000 organizations and millions of learners globally, our commitment to excellence resonates worldwide </p>
+            <p className='text-center my-4 text-[#242424] font-medium' style={{ color: darkMode ? 'white' : '#252525' }}>Preferred by 20,000 organizations and millions of learners globally, our commitment to excellence resonates worldwide </p>
                 <div className='grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-4' >
                     <Tilt >
                         <img className='h-20 my-5 mx-auto' src='https://i.ibb.co/z53F3Xw/ibm.png' />

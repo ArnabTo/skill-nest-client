@@ -1,16 +1,17 @@
 import { NavLink } from "react-router-dom";
-
+import { useTheme } from "@emotion/react";
 const Bteacher = () => {
+    const { darkMode } = useTheme();
     return (
         <div className="flex flex-col md:flex-row">
             <div className=" rounded-lg flex-1" data-aos="fade-up">
                 <img id="floating" src="https://i.ibb.co/FD8V42K/undraw-Educator-re-ju47-1.png" />
             </div>
             <div className=" rounded-lg  flex flex-col justify-center px-4 gap-4 flex-1" data-aos="fade-up">
-                <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl" style={{ color: darkMode ? 'white' : '#111827' }}>
                 Unlock Your Potential: Join Our Team of Dedicated Educators!
                 </h2>
-                <p className="mt-4 text-gray-700">
+                <p className="mt-4" style={{ color: darkMode ? 'white' : '#374151' }}>
                 Passionate about teaching? Join us at 
                <span>SkillNest</span> and be a part of our 
                 dedicated team of educators. Make a lasting impact on 

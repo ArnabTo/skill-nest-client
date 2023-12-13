@@ -1,7 +1,9 @@
 import banner from '../../assets/banner1.png'
 import '../../App.css'
 import { Link } from 'react-router-dom';
+import { useTheme } from '../../ThemeContext';
 const Hero = () => {
+    const { darkMode } = useTheme();
     return (
         <section className="relative mx-4 my-24 lg:my-0" >
         <div className='flex flex-col lg:flex-row justify-center items-center'>
@@ -10,7 +12,7 @@ const Hero = () => {
                 data-aos="fade-right"
                 >
                 <div className="max-w-lg text-left ltr:sm:text-left rtl:sm:text-right">
-                    <h1 className="text-3xl font-extrabold sm:text-5xl text-[#252525]">
+                    <h1 className="text-3xl font-extrabold sm:text-5xl text-[#252525]"  style={{ color: darkMode ? 'white' : '#252525' }}>
                     Elevate Your 
 
                         <strong className="block font-extrabold text-[#FE325B]">
@@ -18,7 +20,7 @@ const Hero = () => {
                         </strong>
                     </h1>
 
-                    <p className="mt-4 max-w-lg sm:text-xl/relaxed text-[#252525]">
+                    <p className="mt-4 max-w-lg sm:text-xl/relaxed text-[#252525]" style={{ color: darkMode ? 'white' : '#252525' }}>
                     Your education is an investment in yourself. Enrolling in a course isn't just a commitment to learning; it's a commitment to your future. The knowledge you gain today will be the foundation for the opportunities of tomorrow.
                     </p>
 

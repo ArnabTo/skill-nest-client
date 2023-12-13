@@ -9,14 +9,14 @@ import Partners from "../../Component/Partners/Partners";
 const Home = () => {
 
     return (
-        <div>
-            <Hero />
-            <Partners />
-            <FeaturedClass></FeaturedClass>
-            <Feedback></Feedback>
-            <Count></Count>
-            <Bteacher></Bteacher>
-        </div>
+            <div>
+                <Hero />
+                <Partners />
+                <FeaturedClass></FeaturedClass>
+                <Feedback></Feedback>
+                <Count></Count>
+                <Bteacher></Bteacher>
+            </div>
     );
 };
 
